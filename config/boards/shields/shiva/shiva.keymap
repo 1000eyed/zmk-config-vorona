@@ -91,6 +91,7 @@ ZMK_BEHAVIOR(slsh_excl, mod_morph, bindings = <&kp SLASH>, <&kp EXCL>; mods = <(
     &none        &none        &none        &none        &none        &none     &none    &none     &none     &none    &none   &none
     &none        &none        &none        &none        &none        &none     &none    &none     &none     &none    &none
     &none                     &none        &none                     &none              &none               &none    &none
+            >;
         };
     };
 };
