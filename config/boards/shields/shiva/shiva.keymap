@@ -22,6 +22,12 @@
 ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk RSFT>, <&kp CAPS>; mods = <(MOD_RSFT)>;)
 ZMK_BEHAVIOR(slsh_excl, mod_morph, bindings = <&kp SLASH>, <&kp EXCL>; mods = <(MOD_RSFT)>;)
 
+// parentheses, braces, brackets, chevrons morphs
+ZMK_BEHAVIOR(lparchev, mod_morph, bindings = <&kp LPAR>, <&kp LT>; mods = <(MOD_RSFT)>;)
+ZMK_BEHAVIOR(rparchev, mod_morph, bindings = <&kp RPAR>, <&kp GT>; mods = <(MOD_RSFT)>;)
+ZMK_BEHAVIOR(lbrkbrc, mod_morph, bindings = <&kp LBKT>, <&kp LBRC>; mods = <(MOD_RSFT)>;)
+ZMK_BEHAVIOR(rbrkbrc, mod_morph, bindings = <&kp RBKT>, <&kp RBRC>; mods = <(MOD_RSFT)>;)
+
 
 / {
 
