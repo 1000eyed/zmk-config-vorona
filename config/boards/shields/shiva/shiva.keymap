@@ -186,6 +186,7 @@ ZMK_COMBO(tocole,   &to COLEMAK,        1 4 7 10,  QWERTY, COMBO_TERM_COMMON)
 ZMK_COMBO(tognum,   &num_dance NUM NUM,    14 16,     ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(slfunc,   &sl FUNC,                2 4,     ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(tognav,   &tog NAV,              13 16,     ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(slble,    &sl BT,          13 16 19 22,     ALL, COMBO_TERM_COMMON)
 
 
 /* TODO: copy PUR plus caps/caps word, combos (probably hold taps?) for %in%, ==, !=, ctrl+S to work on all layers*/
