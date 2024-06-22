@@ -43,14 +43,14 @@ ZMK_BEHAVIOR(rbrkbrc, mod_morph, bindings = <&kp RBKT>, <&kp RBRC>; mods = <(MOD
     };
 
     macros {
-        double_equal: double_equal {
+        pinp: pinp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp EQUAL &kp EQUAL>
+                = <&macro_tap &kp PRCNT &kp I &kp N &kp PRCNT>
                 ;
         };
-        not_equal: not_equal {
+        nequal: nequal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -159,7 +159,7 @@ ZMK_COMBO(prcnt,    &kp PRCNT,       5 17,          ALL, COMBO_TERM_COMMON)
 
 ZMK_COMBO(grave,    &kp GRAVE,      14 25,          ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(bslh,     &kp BSLH,       15 26,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(equal,    &ht_tp double_equal EQUAL,      16 27,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(equal,    &kp EQUAL,      16 27,          ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(tilde,    &kp TILDE,      17 28,          ALL, COMBO_TERM_COMMON)
 
 /* Vertical combos - right hand */
@@ -177,6 +177,8 @@ ZMK_COMBO(pipe,     &kp PIPE,       21 33,          ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(rpipe,     &kp LC(LS(M)),     31 20 21,      ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(requal,    &kp LA(MINUS),     19  8  9,      ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(boot,        &bootloader,  25 26 27 28,       BT, COMBO_TERM_COMMON)
+ZMK_COMBO(nequal,          &nequal,        15 27,      ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(pinp,              &pinp,     14 15 27,      ALL, COMBO_TERM_COMMON)
 
 /* layer combos */
 ZMK_COMBO(toqwer,   &to QWERTY,         1 4 7 10, COLEMAK, COMBO_TERM_COMMON)
