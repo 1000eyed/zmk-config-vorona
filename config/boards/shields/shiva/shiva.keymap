@@ -42,6 +42,23 @@ ZMK_BEHAVIOR(rbrkbrc, mod_morph, bindings = <&kp RBKT>, <&kp RBRC>; mods = <(MOD
         };
     };
 
+    macros {
+        double_equal: double_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp EQUAL &kp EQUAL>
+                ;
+        };
+        not_equal: not_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp EXCL &kp EQUAL>
+                ;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -142,7 +159,7 @@ ZMK_COMBO(prcnt,    &kp PRCNT,       5 17,          ALL, COMBO_TERM_COMMON)
 
 ZMK_COMBO(grave,    &kp GRAVE,      14 25,          ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(bslh,     &kp BSLH,       15 26,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(equal,    &kp EQUAL,      16 27,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(equal,    &ht_tp double_equal EQUAL,      16 27,          ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(tilde,    &kp TILDE,      17 28,          ALL, COMBO_TERM_COMMON)
 
 /* Vertical combos - right hand */
@@ -169,4 +186,4 @@ ZMK_COMBO(slfunc,   &sl FUNC,                2 4,     ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(tognav,   &tog NAV,              13 16,     ALL, COMBO_TERM_COMMON)
 
 
-/* TODO: copy PUR plus caps/caps word, exclmark, combos (probably hold taps?) for %in%, ==, !=, ctrl+S to work on all layers*/
+/* TODO: copy PUR plus caps/caps word, combos (probably hold taps?) for %in%, ==, !=, ctrl+S to work on all layers*/
