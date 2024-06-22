@@ -58,10 +58,10 @@
             gpios = <&gpio1 02 GPIO_ACTIVE_HIGH>;  // red LED, connected to P0.26
         };
         led1: led_1 {
-            gpios = <&gpio1 01 GPIO_ACTIVE_HIGH>;  // green LED, connected to P0.30
+            gpios = <&gpio1 07 GPIO_ACTIVE_HIGH>;  // green LED, connected to P0.30
         };
         led2: led_2 {
-            gpios = <&gpio1 07 GPIO_ACTIVE_HIGH>;  // blue LED, connected to P0.06
+            gpios = <&gpio1 01 GPIO_ACTIVE_HIGH>;  // blue LED, connected to P0.06
         };
     };
 };
