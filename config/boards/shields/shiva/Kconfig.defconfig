@@ -1,6 +1,6 @@
-if SHIELD_SHIVA
+if SHIELD_VORONA
 
 config ZMK_KEYBOARD_NAME
-    default "shiva"
+    default "vorona"
 
 endif
