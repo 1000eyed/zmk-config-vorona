@@ -200,4 +200,4 @@ ZMK_COMBO(tognav,   &tog NAV,              13 16,     ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(slble,    &sl BT,          13 16 19 22,     ALL, COMBO_TERM_COMMON)
 
 
-/* TODO: ctrl+S to work on all layers*/
+/* TODO: push on rotary encoder assign? K_CANCEL on combo? Caps word?*/
