@@ -42,6 +42,24 @@
             RC(6,0) RC(7,0)                         RC(7,2)                                 RC(6,5)
         >;
     };
+
+    encoder_main: encoder_left {
+        compatible = "alps,ec11";
+        label = "LEFT_ENCODER";
+        a-gpios = <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio1  4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <128>;
+        status = "disabled";
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder_main>;
+    };
+};
+
+&encoder_main {
+    status = "okay";
 };
 
 / {
@@ -55,13 +73,13 @@
         compatible = "gpio-leds";
         status = "okay";
         led0: led_0 {
-            gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;  // red LED, connected to P0.26
+            gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;  // red LED, connected to P0.26
         };
         led1: led_1 {
-            gpios = <&gpio1 2 GPIO_ACTIVE_HIGH>;  // green LED, connected to P0.30
+            gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;  // green LED, connected to P0.30
         };
         led2: led_2 {
-            gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;  // blue LED, connected to P0.06
+            gpios = <&gpio1 2 GPIO_ACTIVE_HIGH>;  // blue LED, connected to P0.06
         };
     };
 };
