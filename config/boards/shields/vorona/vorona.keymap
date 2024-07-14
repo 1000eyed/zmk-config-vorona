@@ -15,11 +15,12 @@
 #define BT 5
 
 &lt { flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <200>; require-prior-idle-ms = <200>; };
+&mt { flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <200>; require-prior-idle-ms = <200>; };
 &sk { release-after-ms = <800>; quick-release; };
-&sl { ignore-modifiers; release-after-ms = <10000>; };
+&sl { ignore-modifiers; release-after-ms = <5000>; };
 
 // morphs
-ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk RSFT>, <&kp CAPS>; mods = <(MOD_RSFT)>;)
+ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk LSFT>, <&kp CAPS>; mods = <(MOD_LSFT)>;)
 ZMK_BEHAVIOR(slsh_excl, mod_morph, bindings = <&kp SLASH>, <&kp EXCL>; mods = <(MOD_RSFT)>;)
 
 // parentheses, braces, brackets, chevrons morphs
@@ -27,6 +28,16 @@ ZMK_BEHAVIOR(lparchev, mod_morph, bindings = <&kp LPAR>, <&kp LT>; mods = <(MOD_
 ZMK_BEHAVIOR(rparchev, mod_morph, bindings = <&kp RPAR>, <&kp GT>; mods = <(MOD_RSFT)>;)
 ZMK_BEHAVIOR(lbrkbrc, mod_morph, bindings = <&kp LBKT>, <&kp LBRC>; mods = <(MOD_RSFT)>;)
 ZMK_BEHAVIOR(rbrkbrc, mod_morph, bindings = <&kp RBKT>, <&kp RBRC>; mods = <(MOD_RSFT)>;)
+
+/* LALT morphs */
+ZMK_BEHAVIOR(alt_dtab, mod_morph, bindings = <&kp D>, <&kp TAB>; mods = <(MOD_LALT)>; keep-mods = <(MOD_LALT)>;)
+ZMK_BEHAVIOR(alt_stab, mod_morph, bindings = <&kp S>, <&kp TAB>; mods = <(MOD_LALT)>; keep-mods = <(MOD_LALT)>;)
+ZMK_BEHAVIOR(alt_stab_st, mod_morph, bindings = <&kp S>, <&kp LS(TAB)>; mods = <(MOD_LALT)>; keep-mods = <(MOD_LALT)>;)
+ZMK_BEHAVIOR(alt_rtab_st, mod_morph, bindings = <&kp R>, <&kp LS(TAB)>; mods = <(MOD_LALT)>; keep-mods = <(MOD_LALT)>;)
+
+/* smart modifiers */
+ZMK_BEHAVIOR(dance_ctrl, tap_dance, bindings = <&kp LCTRL>, <&kp LC(LSFT)>; tapping-term-ms = <200>;)
+ZMK_BEHAVIOR(smart_ctrl, hold_tap, flavor = "balanced"; bindings = <&kp>, <&dance_ctrl>; tapping-term-ms = <200>; quick-tap-ms = <200>;)
 
 
 / {
@@ -66,27 +77,27 @@ ZMK_BEHAVIOR(rbrkbrc, mod_morph, bindings = <&kp RBKT>, <&kp RBRC>; mods = <(MOD
             label = "qwerty";
             bindings = <
     &kp RBKT         &kp Q     &kp W        &kp E        &kp R      &kp T     &kp Y     &kp U    &kp I      &kp O     &kp P       &kp LBKT
-    &lt NAV GRAVE    &kp A     &kp S        &kp D        &kp F      &kp G     &kp H     &kp J    &kp K      &kp L     &kp SEMI    &kp SQT
-    &kp LSFT         &kp Z     &kp X        &kp C        &kp V      &kp B     &kp N     &kp M    &kp COMMA  &kp DOT   &slsh_excl
-    &kp LCTRL        &kp LGUI                                       &kp SPACE                                         &kp K_CANCEL
+    &lt NAV GRAVE    &kp A     &alt_stab_st &alt_dtab    &kp F      &kp G     &kp H     &kp J    &kp K      &kp L     &kp SEMI    &kp SQT
+    &kp LSFT         &kp Z     &kp X        &kp C        &kp V      &kp B     &kp N     &kp M    &kp COMMA  &kp DOT   &mt RSFT SLASH
+    &smart_ctrl      &kp LGUI                                       &mt LALT SPACE                                    &kp K_CANCEL
             >;
         };
         COLEMAK{
             label = "colemak";
             bindings = <
-    &kp RBKT         &kp Q     &kp W     &kp F        &kp P      &kp B     &kp J     &kp L     &kp U     &kp Y      &kp SEMI    &kp LBKT
-    &lt NAV GRAVE    &kp A     &kp R     &kp S        &kp T      &kp G     &kp M     &kp N     &kp E     &kp I      &kp O       &kp SQT
-    &kp LSFT         &kp Z     &kp X     &kp C        &kp D      &kp V     &kp K     &kp H     &kp COMMA &kp DOT    &slsh_excl
-    &kp LCTRL        &kp LGUI                                       &kp SPACE                                         &kp K_CANCEL
+    &kp RBKT         &kp Q     &kp W        &kp F        &kp P      &kp B     &kp J     &kp L     &kp U     &kp Y      &kp SEMI    &kp LBKT
+    &lt NAV GRAVE    &kp A     &alt_rtab_st &alt_stab    &kp T      &kp G     &kp M     &kp N     &kp E     &kp I      &kp O       &kp SQT
+    &kp LSFT         &kp Z     &kp X        &kp C        &kp D      &kp V     &kp K     &kp H     &kp COMMA &kp DOT    &mt RSFT SLASH
+    &smart_ctrl      &kp LGUI                                       &mt LALT SPACE                                     &kp K_CANCEL
             >;
         };
         NUM{
             label = "numbers";
             bindings = <
-    &trans       &trans    &kp N7     &kp N8      &kp N9     &trans    &trans    &kp KP_N7 &kp KP_N8 &kp KP_N9  &trans      &trans
-    &trans       &kp N0    &kp N4     &kp N5      &kp N6     &trans    &trans    &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_N0   &trans
-    &trans       &trans    &kp N1     &kp N2      &kp N3     &trans    &trans    &kp KP_N1 &kp KP_N2 &kp KP_N3  &trans 
-    &kp LCTRL    &kp LGUI                                              &kp SPACE                                &tog NUM
+    &trans       &trans    &kp N7     &kp N8      &kp N9     &trans    &trans    &trans &trans &trans  &trans   &trans
+    &trans       &kp N0    &kp N4     &kp N5      &kp N6     &trans    &trans    &trans &trans &trans  &trans   &trans
+    &trans       &trans    &kp N1     &kp N2      &kp N3     &trans    &trans    &trans &trans &trans  &trans 
+    &trans       &trans                                                &trans                  &trans
             >;
         };
         FUNC{
@@ -95,16 +106,16 @@ ZMK_BEHAVIOR(rbrkbrc, mod_morph, bindings = <&kp RBKT>, <&kp RBRC>; mods = <(MOD
     &kp F12      &kp F1    &kp F2     &kp F3      &kp F4     &kp F5    &kp F6    &kp F7    &kp F8    &kp F9     &kp F10    &kp F11
     &trans       &trans    &trans     &trans      &trans     &trans    &trans    &trans    &trans    &trans     &trans     &trans
     &trans       &trans    &trans     &trans      &trans     &trans    &trans    &trans    &trans    &trans     &trans
-    &kp LCTRL    &kp LGUI                                    &kp SPACE                                          &trans
+    &trans       &trans                                      &trans                                             &trans
             >;
         };
         NAV{
             label = "nav";
             bindings = <
     &none        &none     &kp LA(F4) &none      &kp LC(ENTER)  &none     &kp HOME             &kp LC(LEFT)     &kp LC(RIGHT)     &kp END               &none    &none
-    &none        &none     &none      &none      &none          &none     &kp LEFT             &kp DOWN         &kp UP            &kp RIGHT             &none    &none
-    &trans       &none     &none      &none      &none          &none     &kp LS(HOME)         &kp LC(LS(LEFT)) &kp LC(LS(RIGHT)) &kp LS(END)           &none
-    &kp LCTRL    &kp LGUI                                       &kp SPACE                                                                               &tog NAV
+    &none        &none     &kp LC(S)  &none      &none          &none     &kp LEFT             &kp DOWN         &kp UP            &kp RIGHT             &none    &none
+    &trans       &none     &none      &none      &none          &none     &kp LS(HOME)         &kp LC(LS(LEFT)) &kp LC(LS(RIGHT)) &kp LS(END)           &kp EXCL
+    &trans       &trans                                         &trans                                                                                  &tog NAV
             >;
         };
         BT {
@@ -124,7 +135,7 @@ ZMK_BEHAVIOR(rbrkbrc, mod_morph, bindings = <&kp RBKT>, <&kp RBRC>; mods = <(MOD
   │ 0   1   2   3   4   5   6   7   8   9   10  11│
   │ 12  13  14  15  16  17  18  19  20  21  22  23│
   │   24  25  26  27  28  29  30  31  32  33  34  │
-  │  35  36  37      38      39     40  41        │
+  │  35  36               37                38    │
   ╰───────────────────────────────────────────────╯
  */
 #undef COMBO_HOOK
@@ -179,6 +190,8 @@ ZMK_COMBO(requal,    &kp LA(MINUS),     19  8  9,      ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(boot,        &bootloader,        12 34,       BT, COMBO_TERM_COMMON)
 ZMK_COMBO(nequal,          &nequal,        15 27,      ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(pinp,              &pinp,     14 15 27,      ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(cps,            &kp CAPS,        24 34,      ALL, COMBO_TERM_COMMON)
+
 
 /* layer combos */
 ZMK_COMBO(toqwer,   &to QWERTY,         1 4 7 10, COLEMAK, COMBO_TERM_COMMON)
@@ -189,4 +202,4 @@ ZMK_COMBO(tognav,   &tog NAV,              13 16,     ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(slble,    &sl BT,          13 16 19 22,     ALL, COMBO_TERM_COMMON)
 
 
-/* TODO: copy PUR plus caps/caps word, ctrl+S to work on all layers*/
+/* TODO: ctrl+S to work on all layers*/
