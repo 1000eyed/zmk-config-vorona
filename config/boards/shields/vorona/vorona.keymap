@@ -136,68 +136,67 @@ ZMK_BEHAVIOR(alt_rtab_st, mod_morph, bindings = <&kp R>, <&kp LS(TAB)>; mods = <
   │  35  36               37                38    │
   ╰───────────────────────────────────────────────╯
  */
-#undef COMBO_HOOK
-#define COMBO_HOOK require-prior-idle-ms = <200>;
 
 #define COMBO_TERM_COMMON 40
+#define PRIOR_IDLE 200
 
 /* symbol combos */
 
 /* Horizontal combos - left hand */
-ZMK_COMBO(esc,      &kp ESC,          2 3,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(enter,    &kp ENTER,        3 4,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(tab,      &kp TAB,        14 15,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(cut,      &kp LC(X),      26 28,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(copy,     &kp LC(INS),    26 27,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(paste,    &kp LS(INS),    27 28,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(esc,      &kp ESC,          2 3,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(enter,    &kp ENTER,        3 4,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(tab,      &kp TAB,        14 15,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(cut,      &kp LC(X),      26 28,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(copy,     &kp LC(INS),    26 27,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(paste,    &kp LS(INS),    27 28,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
 
 /* Horizontal combos - right hand */
-ZMK_COMBO(bspc,     &kp BSPC,         7 8,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(del,      &kp DEL,          8 9,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(com_lpc,  &lparchev,      19 20,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(com_rpc,  &rparchev,      20 21,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(com_lbb,  &lbrkbrc,       31 32,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(com_rbb,  &rbrkbrc,       32 33,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(bspc,     &kp BSPC,         7 8,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(del,      &kp DEL,          8 9,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(com_lpc,  &lparchev,      19 20,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(com_rpc,  &rparchev,      20 21,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(com_lbb,  &lbrkbrc,       31 32,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(com_rbb,  &rbrkbrc,       32 33,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
 
 
 /* Vertical combos - left hand */
-ZMK_COMBO(at,       &kp AT,          2 14,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(hash,     &kp HASH,        3 15,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(dllr,     &kp DLLR,        4 16,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(prcnt,    &kp PRCNT,       5 17,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(at,       &kp AT,          2 14,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(hash,     &kp HASH,        3 15,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(dllr,     &kp DLLR,        4 16,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(prcnt,    &kp PRCNT,       5 17,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
 
-ZMK_COMBO(grave,    &kp GRAVE,      14 25,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(bslh,     &kp BSLH,       15 26,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(equal,    &kp EQUAL,      16 27,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(tilde,    &kp TILDE,      17 28,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(grave,    &kp GRAVE,      14 25,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(bslh,     &kp BSLH,       15 26,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(equal,    &kp EQUAL,      16 27,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(tilde,    &kp TILDE,      17 28,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
 
 /* Vertical combos - right hand */
-ZMK_COMBO(caret,    &kp CARET,       6 18,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(plus,     &kp PLUS,        7 19,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(star,     &kp STAR,        8 20,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(amps,     &kp AMPS,        9 21,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(caret,    &kp CARET,       6 18,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(plus,     &kp PLUS,        7 19,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(star,     &kp STAR,        8 20,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(amps,     &kp AMPS,        9 21,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
 
-ZMK_COMBO(under,    &kp UNDER,      18 30,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(minus,    &kp MINUS,      19 31,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(fslh,     &kp FSLH,       20 32,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(pipe,     &kp PIPE,       21 33,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(under,    &kp UNDER,      18 30,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(minus,    &kp MINUS,      19 31,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(fslh,     &kp FSLH,       20 32,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(pipe,     &kp PIPE,       21 33,          ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
 
 /* special combos */
-ZMK_COMBO(rpipe,     &kp LC(LS(M)),     31 20 21,      ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(requal,    &kp LA(MINUS),     19  8  9,      ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(boot,        &bootloader,        12 34,       BT, COMBO_TERM_COMMON)
-ZMK_COMBO(nequal,          &nequal,        15 27,      ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(pinp,              &pinp,     14 15 27,      ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(cps,            &kp CAPS,        24 34,      ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(rpipe,     &kp LC(LS(M)),     31 20 21,      ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(requal,    &kp LA(MINUS),     19  8  9,      ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(boot,        &bootloader,        12 34,       BT, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(nequal,          &nequal,        15 27,      ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(pinp,              &pinp,     14 15 27,      ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(cps,            &kp CAPS,        24 34,      ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
 
 
 /* layer combos */
-ZMK_COMBO(toqwer,   &to QWERTY,         1 4 7 10, COLEMAK, COMBO_TERM_COMMON)
-ZMK_COMBO(tocole,   &to COLEMAK,        1 4 7 10,  QWERTY, COMBO_TERM_COMMON)
-ZMK_COMBO(tognum,   &num_dance NUM NUM,    14 16,     ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(slfunc,   &sl FUNC,                2 4,     ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(tognav,   &tog NAV,              13 16,     ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(slble,    &sl BT,          13 16 19 22,     ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(toqwer,   &to QWERTY,         1 4 7 10, COLEMAK, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(tocole,   &to COLEMAK,        1 4 7 10,  QWERTY, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(tognum,   &num_dance NUM NUM,    14 16,     ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(slfunc,   &sl FUNC,                2 4,     ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(tognav,   &tog NAV,              13 16,     ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(slble,    &sl BT,          13 16 19 22,     ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
 
 
-/* TODO: push on rotary encoder assign? K_CANCEL on combo? Caps word? Reduce encoder sensitivity? */
+/* TODO: push on rotary encoder assign? K_CANCEL on combo? Caps word? */
