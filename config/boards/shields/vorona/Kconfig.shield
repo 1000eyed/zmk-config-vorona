@@ -1,2 +1,2 @@
-config SHIELD_vorona
+config SHIELD_VORONA
     def_bool $(shields_list_contains,vorona)
