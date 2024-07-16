@@ -3,9 +3,11 @@
 #include <dt-bindings/zmk/bt.h>
 
 #include "zmk-helpers/helper.h"
+#include "zmk-helpers/international_chars/german.dtsi"
+#include "zmk-helpers/international_chars/french.dtsi"
 
 // Source unicode-chars for desired languages
-#include "zmk-helpers/unicode-chars/german.dtsi"
+// #include "zmk-helpers/unicode-chars/german.dtsi"
 
 #define QWERTY 0
 #define COLEMAK 1
@@ -13,6 +15,7 @@
 #define FUNC 3
 #define NAV 4
 #define BT 5
+#define UML 6
 
 &lt { flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <200>; require-prior-idle-ms = <200>; };
 &mt { flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <200>; require-prior-idle-ms = <200>; };
@@ -125,6 +128,15 @@ ZMK_BEHAVIOR(alt_rtab_st, mod_morph, bindings = <&kp R>, <&kp LS(TAB)>; mods = <
     &none        &none                                  &none                                                        &none
             >;
         };
+        UML {
+            label = "uml";
+            bindings = <
+    &none        &none        &none        &fr_e_acute  &none        &none     &none    &de_ue    &none     &de_oe   &none   &none
+    &none        &de_ae       &de_eszett   &none        &none        &none     &none    &none     &none     &none    &none   &none
+    &none        &none        &none        &none        &none        &none     &none    &none     &none     &none    &none
+    &none        &none                                  &none                                                        &none
+            >;
+        };
     };
 };
 
@@ -197,6 +209,7 @@ ZMK_COMBO(tognum,   &num_dance NUM NUM,    14 16,     ALL, COMBO_TERM_COMMON, PR
 ZMK_COMBO(slfunc,   &sl FUNC,                2 4,     ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
 ZMK_COMBO(tognav,   &tog NAV,              13 16,     ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
 ZMK_COMBO(slble,    &sl BT,          13 16 19 22,     ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
+ZMK_COMBO(sluml,    &sl UML,                 1 4,  QWERTY, COMBO_TERM_COMMON) # don't need prior idle for this
 
 
-/* TODO: push on rotary encoder assign? K_CANCEL on combo? Caps word? Sort out leds finally, add DEU symbols with layer/leader key */
+/* TODO: push on rotary encoder assign? K_CANCEL on combo? Caps word? Sort out leds finally */
