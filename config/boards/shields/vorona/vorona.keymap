@@ -3,11 +3,12 @@
 #include <dt-bindings/zmk/bt.h>
 
 #include "zmk-helpers/helper.h"
-#include "zmk-helpers/international_chars/german.dtsi"
-#include "zmk-helpers/international_chars/french.dtsi"
+// #include "zmk-helpers/international_chars/german.dtsi"
+// #include "zmk-helpers/international_chars/french.dtsi"
 
 // Source unicode-chars for desired languages
-// #include "zmk-helpers/unicode-chars/german.dtsi"
+#include "zmk-helpers/unicode-chars/german.dtsi"
+#include "zmk-helpers/unicode-chars/french.dtsi"
 
 #define QWERTY 0
 #define COLEMAK 1
