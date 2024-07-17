@@ -210,7 +210,7 @@ ZMK_COMBO(tognum,   &num_dance NUM NUM,    14 16,     ALL, COMBO_TERM_COMMON, PR
 ZMK_COMBO(slfunc,   &sl FUNC,                2 4,     ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
 ZMK_COMBO(tognav,   &tog NAV,              13 16,     ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
 ZMK_COMBO(slble,    &sl BT,          13 16 19 22,     ALL, COMBO_TERM_COMMON, PRIOR_IDLE)
-ZMK_COMBO(sluml,    &sl UML,                 1 4,  QWERTY, COMBO_TERM_COMMON) # don't need prior idle for this
+ZMK_COMBO(sluml,    &sl UML,                 1 4,  QWERTY, COMBO_TERM_COMMON) // don't need prior idle for this
 
 
 /* TODO: push on rotary encoder assign? K_CANCEL on combo? Caps word? Sort out leds finally */
